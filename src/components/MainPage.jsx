@@ -33,10 +33,7 @@ const MainPage = () => {
         <>
             <Navbar bg="light" className="justify-content-between">
                 <div style={{ margin: "0 0 0 15px" }}>
-                    <Navbar.Brand href="/order">Order Page</Navbar.Brand>
-                </div>
-                <div className="mr-3">
-                    <Navbar.Brand href="/cart">Cart</Navbar.Brand>
+                    <Navbar.Brand href="/">Main</Navbar.Brand>
                 </div>
             </Navbar>
             <div className="d-flex justify-content-between m-3">
