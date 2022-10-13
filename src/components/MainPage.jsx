@@ -6,6 +6,7 @@ import Col from 'react-bootstrap/Col';
 import Navbar from 'react-bootstrap/Navbar';
 import Dropdown from 'react-bootstrap/Dropdown';
 import axios from "axios";
+import { Sort } from "../utility/sort";
 
 const MainPage = () => {
 
@@ -19,15 +20,20 @@ const MainPage = () => {
     })
 
     const [products, setProducts] = useState()
-
+    const [data, setData] = useState()
     useEffect(() => {
         const getProducts = async () => {
             const res = await axios.get("https://fakestoreapi.com/products")
             setProducts(res.data)
+            setData(res.data)
         }
         getProducts()
         // eslint-disable-next-line
     }, [])
+
+    useEffect(() => {
+        setProducts(Sort(sort, data))
+    }, [sort])
 
     return (
         <>
